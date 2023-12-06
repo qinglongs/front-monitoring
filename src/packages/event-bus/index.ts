@@ -1,5 +1,7 @@
+import { captureNativeError } from "../error/nativeError";
+
 export class EventBus {
-  // 事件队列
+  /** 事件队列 */
   private queue: Map<string, Array<(params?: any) => void>> = new Map();
 
   /** 注册事件 */
@@ -12,8 +14,11 @@ export class EventBus {
   /** 触发事件 */
   public emit(event: string, params: any) {
     const eventQueue = this.queue.get(event);
-    eventQueue.forEach((cb) => {
-      cb(params);
-    });
+    while (eventQueue.length > 0) {
+      const cb = eventQueue.shift();
+      captureNativeError(() => {
+        cb(params);
+      });
+    }
   }
 }
