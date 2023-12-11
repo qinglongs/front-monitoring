@@ -14,9 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
+    "@rrweb/types": "2.0.0-alpha.11",
     "@types/md5": "^2.3.5",
     "md5": "^2.3.0",
     "rollup": "^4.6.1",
+    "rrweb": "2.0.0-alpha.4",
     "typescript": "^5.3.2"
   },
   "devDependencies": {

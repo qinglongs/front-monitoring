@@ -3,6 +3,7 @@ import { EventBus } from "../event-bus/index";
 
 export class Point {
   private static eventBus = new EventBus();
+  private static report = new Report
 
   /** 埋点开始 */
   static trackStart(eventName: string, cb: () => void) {
@@ -14,7 +15,7 @@ export class Point {
     this.eventBus.emit(event, cb);
   }
 
-  /** 点击事件 */
+  /** 点击 */
   static trackClick(event:string,cb:()=>void){
     
   }

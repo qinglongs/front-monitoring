@@ -4,36 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.bootcdn.net/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
+    <script src="./build/index.js"></script>
     <title>Document</title>
   </head>
   <body>
     <div id="a">hello</div>
+    <button id="button">按钮</button>
+    <textarea
+      name="event-log-contents"
+      class="event-log-contents"
+      cols="30"
+      rows="10"
+    ></textarea>
     <script>
-      var md = new MobileDetect(window.navigator.userAgent);
-      const a = document.querySelector("#a");
-      const obj = {
-        mobile: md.mobile(),
-        phone: md.phone(),
-        tablet: md.tablet(),
-        userAgent: md.userAgent(),
-        os: md.os(),
-        iphone: md.is("iPhone"),
-        bot: md.is("bot"),
-        webkit: md.version("Webkit"),
-        build: md.versionStr("Build"),
-        play: md.match("playstation|xbox"),
-      };
-      a.innerHTML = JSON.stringify(obj)
-    //   console.log(md.mobile()); // 'Sony'
-    //   console.log(md.phone()); // 'Sony'
-    //   console.log(md.tablet()); // null
-    //   console.log(md.userAgent()); // 'Safari'
-    //   console.log(md.os()); // 'AndroidOS'
-    //   console.log(md.is("iPhone")); // false
-    //   console.log(md.is("bot")); // false
-    //   console.log(md.version("Webkit")); // 534.3
-    //   console.log(md.versionStr("Build")); // '4.1.A.0.562'
-    //   console.log(md.match("playstation|xbox")); // false
+      const button = document.querySelector("#button");
+      button.addEventListener("click", () => {
+        Promise.reject('promise异常');
+        throw Error("1231321313");
+      });
     </script>
   </body>
 </html>

@@ -5,7 +5,7 @@ export default {
     input: 'src/index.ts',
     output: {
         file: 'build/index.js',
-        format: 'es'
+        format: 'umd'
     },
     plugins: [typescript({ compilerOptions: { lib: ["es5", "es6", "dom"], target: "es5" } })]
 };

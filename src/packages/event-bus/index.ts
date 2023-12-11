@@ -1,4 +1,4 @@
-import { captureNativeError } from "../error/nativeError";
+import { captureNativeError } from "../error/index";
 
 export class EventBus {
   /** 事件队列 */
