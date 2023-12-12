@@ -154,11 +154,12 @@
 
     /** 开始录像 */
     var startRecord = function () {
-        rrweb__namespace.record({
+        var stop = rrweb__namespace.record({
             emit: function (event) {
                 console.log(event);
-            }
+            },
         });
+        return stop;
     };
 
     console.log("监控代码开始执行-----");

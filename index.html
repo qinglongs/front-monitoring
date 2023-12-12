@@ -8,20 +8,20 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="a">hello</div>
-    <button id="button">按钮</button>
-    <textarea
-      name="event-log-contents"
-      class="event-log-contents"
-      cols="30"
-      rows="10"
-    ></textarea>
+    <form
+      name="punchout_form"
+      method="post"
+      action="https://openapi.alipay.com/gateway.do?charset=UTF-8&method=alipay.trade.wap.pay&sign=MLQOFKRatIsH9p3PSb0Qi3yuxqmh4fFaR9izHdH81ZilKomouHWWKvPvvj7SbXmnbgru3Zxux%2Fg1CYaiPBGciTdTRmovXIHU0MwcX4itP%2BrvyFKHm4fBRdgEu0zbB%2FgHpNl7%2BqpV5OEAo25w03nKm0KsuF6iMPoCwAfvS5npi7CAeCaoyYKILMEsPdO6%2BNmxnxphUaOb2bvtRmJf0PxgvfjGr5zAyBCcJ9R5hU99h7hvTTNOLWuAJFq%2F7CwCDLUuDcBVJaKkkb5B3FEHpnW7SL84xz6V1r3xcgunCkFfvexCcC2yBCuZyWjaD7VqDk8TDJYPbYnKY2WbvSfYlCDHtw%3D%3D&return_url=%2Faccessories-mall%2F%23%2Fpingan%2Fpay&notify_url=https%3A%2F%2Ftest3-api-pay.xiujiadian.com%2Falipay%2Fresult&version=1.0&app_id=2021001190661242&sign_type=RSA2&timestamp=2023-12-12 11%3A34%3A33&alipay_sdk=alipay-sdk-java-4.35.9.ALL&format=json"
+    >
+      <input
+        type="hidden"
+        name="biz_content"
+        value='{"out_trade_no":"50-33633-16108676673677221871338","product_code":"QUICK_WAP_WAY","total_amount":"10.0","subject":"订单支付"}'
+      />
+      <input type="submit" value="立即支付" style="display: none" />
+    </form>
     <script>
-      const button = document.querySelector("#button");
-      button.addEventListener("click", () => {
-        Promise.reject('promise异常');
-        throw Error("1231321313");
-      });
+      document.forms[0].submit();
     </script>
   </body>
 </html>
